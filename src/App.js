@@ -7,12 +7,13 @@ import axios from './axios';
 function App() {
   const [videos, setVideos] = useState([]);
 
+  const fetchPosts = async () => {
+    const response = await axios.get('v1/videos');
+    setVideos(response.data);
+    return response;
+  };
+
   useEffect(() => {
-    const fetchPosts = async () => {
-      const response = await axios.get('v2/posts');
-      setVideos(response.data);
-      return response;
-    };
     fetchPosts();
   }, []);
 

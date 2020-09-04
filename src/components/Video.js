@@ -1,7 +1,18 @@
 import React, { useState, useRef } from 'react';
+
+import VideoFooter from './VideoFooter';
+import VideoSidebar from './VideoSidebar';
 import './Video.css';
 
-const Video = () => {
+const Video = ({
+  channel,
+  description,
+  url,
+  likes,
+  shares,
+  song,
+  messages,
+}) => {
   const [playing, setPlaying] = useState(false);
   const videoRef = useRef(null);
 
